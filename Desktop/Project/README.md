@@ -7,8 +7,14 @@
 
 ## 📁 מבנה הפרויקט
 
-<pre> ``` Project/ ├── client/ # צד לקוח (React + TailwindCSS) ├── server/ # צד שרת (Node.js + Express) ├── db/ # קבצי SQL - יצירת מסד נתונים │ └── init.sql ├── README.md ├── .gitignore ``` </pre>
-
+Project/  
+├── client/      # צד לקוח (React + TailwindCSS)  
+├── server/      # צד שרת (Node.js + Express)  
+├── db/          # קבצי SQL - יצירת מסד נתונים  
+│   └── init.sql  
+├── README.md  
+├── .gitignore  
+  
 ---
 
 ## 🚀 הפעלה מהירה (Quick Start)
