@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS smartcampus;
+
+USE smartcampus;
+
+CREATE TABLE IF NOT EXISTS sensors (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  location VARCHAR(100),
+  humidity FLOAT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS watering_logs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  sensor_id INT,
+  status ENUM('ON', 'OFF'),
+  timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (sensor_id) REFERENCES sensors(id)
+);
