@@ -1,18 +1,28 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Pages/Home";
+import Dashboard from "./Pages/Dashboard";
+import Login from "./Pages/Login";
+import MapView from "./Pages/MapView";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-200 to-blue-300">
-      <h1 className="text-5xl font-extrabold text-blue-800 mb-4">
-        Tailwind עובד! 🎉
-      </h1>
-      <p className="text-xl text-gray-700 mb-8">
-        ברוך הבא לפרויקט שלך. כל הכבוד על ההתמדה!
-      </p>
-      <button className="px-6 py-3 bg-blue-600 text-white font-bold rounded-2xl shadow hover:bg-blue-700 transition">
-        כפתור דוגמה
-      </button>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/map" element={<MapView />} />
+          {/* Add more routes as needed */}
+
+
+          <Route path="*" element={<NotFound />} />
+          
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 
